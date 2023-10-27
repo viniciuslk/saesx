@@ -1,0 +1,15 @@
+name: saesx
+services:
+  db:
+    image: postgres
+    ports:
+      - '54321:5432'
+    environment:
+      - POSTGRES_USER=saesx
+      - POSTGRES_PASSWORD=saesx
+      - POSTGRES_DB=saesx
+      - PG_DATA=/var/lib/postgresql/data
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
