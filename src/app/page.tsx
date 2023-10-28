@@ -1,24 +1,15 @@
-'use client'
+import { PubsList } from "@saesx/components/PubsList";
+import {getServerSession} from "next-auth";
+import {authConfig} from "@saesx/lib/auth";
+import {CreatePubForm} from "@saesx/components/CreatePubForm";
 
-import React from "react";
-import {supabase} from "@saesx/lib/supabase";
-
-export default function Home() {
-  const [pubs, setPubs] = React.useState([])
-
-  React.useEffect(() => {
-    supabase
-      .channel('saes')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'pubs'},
-        (payload) => {
-          setPubs(current => [payload.new, ...current])
-        })
-      .subscribe()
-  }, [])
+export default async function Home() {
+  const session = await getServerSession(authConfig)
 
   return (
-    <div>{pubs.map(pub => (
-      <div key={pub.id}>{JSON.stringify(pub, null ,2)}</div>
-    ))}</div>
+    <div>
+      <CreatePubForm user={session?.user as any} />
+      <PubsList />
+    </div>
   )
 }
