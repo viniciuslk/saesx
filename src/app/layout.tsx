@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import {SaesxProviders} from "@saesx/app/Providers";
-import {getServerSession} from "next-auth";
-import {authConfig} from "@saesx/lib/auth";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,21 +11,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modals
 }: {
   children: React.ReactNode
-  modals: React.ReactNode
 }) {
-  const session = getServerSession(authConfig)
-
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <SaesxProviders session={session}>
-          {children}
-          {modals}
-        </SaesxProviders>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

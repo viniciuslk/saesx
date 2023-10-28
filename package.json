@@ -1,5 +1,5 @@
 {
-  "name": "saesx",
+  "name": "saesx-v2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,30 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clickvote/react": "^0.0.8",
-    "@happykit/flags": "^3.3.0",
-    "@prisma/client": "5.5.2",
-    "@supabase/supabase-js": "^2.38.3",
-    "appwrite": "^13.0.0",
-    "classnames": "^2.3.2",
-    "human-date": "^1.4.0",
-    "next": "13.5.6",
-    "next-auth": "^4.24.3",
-    "preline": "^1.9.0",
+    "@supabase/supabase-js": "^2.38.4",
+    "next": "14.0.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^4.11.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/human-date": "^1.4.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
     "eslint": "^8",
-    "eslint-config-next": "13.5.6",
+    "eslint-config-next": "14.0.0",
     "postcss": "^8",
-    "prisma": "^5.5.2",
     "tailwindcss": "^3",
     "typescript": "^5"
   }

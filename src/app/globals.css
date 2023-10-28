@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 html, body {
-    min-height: 100%;
-    background: theme('colors.neutral.50');
+  background: theme('colors.neutral.50')
 }
